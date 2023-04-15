@@ -4,7 +4,6 @@ class Solution {
         if (n < 3) {
             return true;
         }
-
         boolean isIncreasing = nums[n - 1] > nums[0];
         for (int i = 1; i < n; i++) {
             if (isIncreasing) {
@@ -18,7 +17,6 @@ class Solution {
                 }
             }
         }
-
         return true;
     }
 }
