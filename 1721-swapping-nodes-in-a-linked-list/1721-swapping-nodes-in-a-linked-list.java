@@ -17,7 +17,6 @@ class Solution {
             size++;
         }
         // from the first
-        int x = -1;
         ListNode firstNode = head;
         int i = 1;
         while(i < k){
@@ -26,7 +25,6 @@ class Solution {
         }
 
          // from the last
-        int y = -1;
         ListNode secondNode = head;
         i = 1;
         while(i <= size - k){
