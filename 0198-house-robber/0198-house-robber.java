@@ -1,20 +1,13 @@
 class Solution {
     public int rob(int[] nums) {
-        if(nums.length < 2) 
-            return nums[0];
+        if(nums.length == 1) return nums[0];
+        int[] arr = new int[nums.length];
+        arr[0] = nums[0];
+        arr[1] = Math.max(nums[0], nums[1]);
 
-// creating array to store the maximum element
-        int[] maxArr = new int[nums.length];
-
-        maxArr[0] = nums[0];
-        maxArr[1] = Math.max(nums[0], nums[1]);
-
-// to complete full array
         for(int i = 2; i < nums.length; i++){
-            // core logic
-            maxArr[i] = Math.max(maxArr[i - 2] + nums[i], maxArr[i - 1]);
+            arr[i] = Math.max(nums[i] + arr[i - 2], arr[i - 1]);
         }
-
-        return maxArr[nums.length-1];
+        return Math.max(arr[arr.length - 1], arr[arr.length - 2]);
     }
 }
