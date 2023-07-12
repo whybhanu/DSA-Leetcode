@@ -46,11 +46,17 @@ class GFG {
 
 class Solution {
     public long kthElement( int arr1[], int arr2[], int n, int m, int k) {
+        int count1 = 0;
+        int count2 = 0;
         int count = 0;
         int[] ans = new int[arr1.length + arr2.length];
-        for(int i : arr1) ans[count++] = i;
-        for(int i : arr2) ans[count++] = i;
-        Arrays.sort(ans);
+        while(count1 < arr1.length && count2 < arr2.length){
+            if(arr1[count1] < arr2[count2]) ans[count++] = arr1[count1++];
+            else ans[count++] = arr2[count2++];
+        }
+        while(count1 < arr1.length) ans[count++] = arr1[count1++];
+        while(count2 < arr2.length) ans[count++] = arr2[count2++];
+        
         return ans[k - 1];
     }
 }
