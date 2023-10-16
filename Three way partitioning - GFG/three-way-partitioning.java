@@ -100,17 +100,5 @@ class GFG{
 class Solution {
     public void threeWayPartition(int nums[], int a, int b) {
         Arrays.sort(nums);
-        int[] arr = new int[nums.length];
-        int count = 0;
-        for(int num : nums){
-            if(num < a){
-                arr[count++] = num;
-            } else if(num >= a && num <= b){
-                arr[count++] = num;
-            } else {
-                arr[count++] = num;
-            }
-        }
-        for(int i = 0; i < arr.length; i++) nums[i] = arr[i];
     }
 }
